@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EventCalendar</title>
+    <% if yield(:title).empty? %>
+      <title>Event Calendar</title>
+    <% else %>
+      <title><%= yield(:title) %> | Event Calendar</title>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
   </head>
-
   <body>
-    <%= yield %>
+    <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+    <%= render 'layouts/header' %>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
