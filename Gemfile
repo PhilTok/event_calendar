@@ -71,3 +71,5 @@ gem "bcrypt", "~> 3.1"
 gem "jquery", "~> 0.0.1"
 
 gem "jquery-rails", "~> 4.3"
+
+gem "faker", "~> 1.9"
