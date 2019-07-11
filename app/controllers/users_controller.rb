@@ -10,10 +10,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @events = @user.events.paginate(page: params[:page])
   end
 
   def create
-    @user = User.new(user_params)    # Не окончательная реализация!
+    @user = User.new(user_params)
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Event Calendar!"

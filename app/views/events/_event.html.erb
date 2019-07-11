@@ -1,0 +1,11 @@
+<li id="event-<%= event.id %>">
+  <span class="user"><%= link_to event.user.email, event.user %></span>
+  <span class="content"><%= event.name %></span>
+  <span class="content"><%= event.content %></span>
+  <span class="timestamp">
+    Date: <%= event.datetime.strftime("%d.%m.%Y") %>
+  </span>
+  <span class="timestamp">
+    Time: <%= event.datetime.strftime("%H:%M") %>
+  </span>
+</li>

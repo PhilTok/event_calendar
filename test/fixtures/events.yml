@@ -1,0 +1,24 @@
+orange:
+  name: "Bd"
+  content: "1234567890"
+  datetime: "08.07.2019 19:00"
+  user: michael
+
+
+tau_manifesto:
+  name: "bd"
+  content: "1234567890"
+  datetime: "18.12.2019 19:00"
+  user: michael
+
+cat_video:
+  name: "bd"
+  content: "1234567890"
+  datetime: "07.07.2019 19:00"
+  user: michael
+
+most_near:
+  name: "bd"
+  content: "1234567890"
+  datetime: <%= Time.zone.now %>
+  user: michael
