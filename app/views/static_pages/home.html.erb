@@ -1,11 +1,21 @@
-<% provide(:title, "Home") %>	
-<div class="center jumbotron">
-  <h1>Welcome to the Event Calendar</h1>
+<% provide(:title, "Home") %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+	<div class="center jumbotron">
+	  <h1>Welcome to the Event Calendar</h1>
 
-  <h2>
-    This is the home page for the
-    <a href="http://www.railstutorial.org/">Event Calendar</a>.
-  </h2>
+	  <h2>
+	    This is the home page for the
+	    <a href="http://www.railstutorial.org/">Event Calendar</a>.
+	  </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-</div>
+	  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	</div>
+<% end %>

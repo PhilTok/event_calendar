@@ -14,9 +14,15 @@
       <%= f.label :repeat, "Frequency" %>
       <%= f.select(:repeat, ['Once','Week','Day','Month','Year'], {} , { class: 'form-control', disabled: :disabled }) %>
 
-      <%= link_to "Edit event", edit_event_path(@event), class: 'form-control link-back' %>
-
       <%= link_to "Back to profile", current_user, class: 'form-control link-back' %>
+
+      <% if current_user.id == @event.user_id %>
+
+        <%= link_to "Edit event", edit_event_path(@event), class: 'form-control link-back' %>
+
+        <%= link_to "Delete", @event, method: :delete, class: 'form-control link-back', data: { confirm: "You sure?" } %>
+
+       <% end %>
     <% end %>
   </div>
 </div>
