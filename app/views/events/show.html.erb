@@ -9,20 +9,27 @@
 
       <%= f.input :content, input_html: { class: 'form-control', readonly: :readonly } %>
 
-      <%= f.input :datetime, as: :datetime, input_html: { class: 'form-control', disabled: :disabled }%>
+      <%= f.input :datetime, as: :string, input_html: { class: 'form-control datetimepicker', disabled: :disabled }%>
 
       <%= f.label :repeat, "Frequency" %>
       <%= f.select(:repeat, ['Once','Week','Day','Month','Year'], {} , { class: 'form-control', disabled: :disabled }) %>
 
-      <%= link_to "Back to profile", current_user, class: 'form-control link-back' %>
+      <div>
+        <%= link_to "Back to profile", current_user, class: 'form-control link-back' %>
 
-      <% if current_user.id == @event.user_id %>
+        <% if current_user.id == @event.user_id %>
 
-        <%= link_to "Edit event", edit_event_path(@event), class: 'form-control link-back' %>
+          <%= link_to "Edit event", edit_event_path(@event), class: 'form-control link-back' %>
 
-        <%= link_to "Delete", @event, method: :delete, class: 'form-control link-back', data: { confirm: "You sure?" } %>
+          <%= link_to "Delete", @event, method: :delete, class: 'form-control link-back', data: { confirm: "You sure?" } %>
 
        <% end %>
+     </div>
     <% end %>
   </div>
 </div>
+<script type="text/javascript">
+  $(function(){
+    $('.datetimepicker').datetimepicker({ format: 'YYYY-MM-DD HH:mm' });
+  });
+</script>

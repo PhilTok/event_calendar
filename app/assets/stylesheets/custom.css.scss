@@ -1,5 +1,6 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap-datetimepicker';
 /* universal */
 
 body {
@@ -71,10 +72,13 @@ p {
   color: #fff;
   text-decoration: none;
 }
+.navbar{
+  margin-bottom: 0;
+}
 /* forms */
 
 a.link-back{
-  width: 120px;
+  display: inline;
   background: #337ab7;
   color: white;
   border: 1px solid #bbb;
@@ -158,6 +162,16 @@ input {
     margin-right: 10px;
     margin-top: 5px;
   }
+}
+
+.simple-calendar{
+  .day{
+    height: 150px !important;
+  }
+  a{
+    display: block;
+  }
+  min-width: 1200px;
 }
 
 aside {

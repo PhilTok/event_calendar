@@ -2,9 +2,17 @@
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
-      <section class="user_info">
+      <div class="user_info">
         <%= render 'shared/user_info' %>
       </section>
+      <%= month_calendar do |date| %>
+      	<%= date.day %>
+      	<% Event.all.order(:datetime).each do |e| %>
+				  <% if e.datetime.strftime('%F') == date.to_s %>
+				  	<%= link_to "#{e.name} #{e.datetime.strftime("%H:%M")}", event_path(e) %>
+			  	<% end %>
+		  	<% end %>
+			<% end %>
     </aside>
   </div>
 <% else %>

@@ -79,3 +79,9 @@ gem "will_paginate", "~> 3.1"
 gem "jquery-ui-rails", "~> 6.0"
 
 gem "simple_form", "~> 4.1"
+
+gem 'simple_calendar', '~> 2.3'
+
+gem 'momentjs-rails', '>= 2.9.0'
+
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
