@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <aside class="col-md-4">
-    <section class="user_info">
+    <div class="user_info">
       <% unless @user.name.nil? %>
         <h1>
           <%= @user.name %>
@@ -11,7 +11,7 @@
         <%= @user.email %>
       </h1>
       <%= link_to "Create a new event", create_path, class: 'form-control link-back' %>
-    </section>
+    </div>
   </aside>
   <div class="col-md-8">
     <% if @user.events.any? %>
