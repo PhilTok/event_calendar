@@ -1,12 +1,14 @@
 <% provide(:title, "Home") %>
 <% if logged_in? %>
   <div class="row">
-    <aside class="col-md-2">
+    <aside class="col-md-3">
       <div class="user_info">
         <%= render 'shared/user_info' %>
       </div>
-      <%= render 'events/calendar' %>
     </aside>
+    <div class='col-md-8'>
+      <%= render 'events/calendar' %>
+    </div>
   </div>
 <% else %>
 	<div class="center jumbotron">

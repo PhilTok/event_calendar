@@ -12,18 +12,19 @@
       <%= f.input :datetime, as: :string, input_html: { class: 'form-control datetimepicker', disabled: :disabled }%>
 
       <%= f.label :repeat, "Frequency" %>
-      <%= f.select(:repeat, ['Once','Week','Day','Month','Year'], {} , { class: 'form-control', disabled: :disabled }) %>
+      <%= f.select(:repeat, [f.object.repeat], {} , { class: 'form-control', disabled: :disabled }) %>
 
-      <div>
-        <%= link_to "Back to profile", current_user, class: 'form-control link-back' %>
+      <div class='flex-row'>
 
         <% if current_user.id == @event.user_id %>
 
-          <%= link_to "Edit event", edit_event_path(@event), class: 'form-control link-back' %>
-
           <%= link_to "Delete", @event, method: :delete, class: 'form-control link-back', data: { confirm: "You sure?" } %>
 
+          <%= link_to "Edit event", edit_event_path(@event), class: 'form-control link-back' %>
+
        <% end %>
+
+      <%= link_to "Back to profile", current_user, class: 'form-control link-back' %>
      </div>
     <% end %>
   </div>

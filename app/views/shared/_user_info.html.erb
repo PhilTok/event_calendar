@@ -1,7 +1,4 @@
-<% if !current_user.name.empty? %>
-	<h1><%= current_user.name %></h1>
-<% end %>
+<h1><%= current_user.name %></h1>
 <h1><%= current_user.email %></h1>
-<span><%= link_to "view my profile", current_user %></span>
-<span><%= pluralize(current_user.events.count, "events") %></span>
+<div class="get_info"><%= link_to "view my profile", current_user %> <%= pluralize(current_user.events.count, "events") %></div>
 <%= link_to "Create a new event", create_path, class: 'form-control link-back' %>

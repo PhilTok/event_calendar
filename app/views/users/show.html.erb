@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3">
     <div class="user_info">
       <% unless @user.name.nil? %>
         <h1>
@@ -13,13 +13,13 @@
       <%= link_to "Create a new event", create_path, class: 'form-control link-back' %>
     </div>
   </aside>
-  <div class="col-md-8">
-    <% if @user.events.any? %>
-      <h3>Events (<%= @user.events.count %>)</h3>
-      <ol class="events">
-        <%= render @events %>
-      </ol>
-      <%= will_paginate @events %>
-    <% end %>
-  </div>
+<div class="col-md-7">
+  <% if @user.events.any? %>
+    <h3>Events (<%= @user.events.count %>)</h3>
+    <ol class="events">
+      <%= render @events %>
+    </ol>
+    <%= will_paginate @events %>
+  <% end %>
+</div>
 </div>

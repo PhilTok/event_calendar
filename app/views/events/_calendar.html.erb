@@ -1,8 +1,8 @@
 <%= month_calendar do |date| %>
 	<%= date.day %>
 	<% Event.all.order(:datetime).each do |e| %>
-	  <% if ((e.datetime.strftime('%F') == date.to_s) or (e.datetime.wday == date.wday and e.repeat == 'Week') or (e.datetime.day == date.day and e.repeat == 'Month') or (e.datetime.day == date.day and e.datetime.month == date.month and e.repeat == 'Year')) and date >= DateTime.now %>
-	  	<%= link_to "#{e.name} #{e.datetime.strftime("%H:%M")}", event_path(e) %>
+	  <% if ((e.datetime.strftime('%F') == date.to_s) or (e.repeat == 'Daily') or (e.datetime.wday == date.wday and e.repeat == 'Weekly') or (e.datetime.day == date.day and e.repeat == 'Monthly') or (e.datetime.day == date.day and e.datetime.month == date.month and e.repeat == 'Yearly')) and date >= DateTime.now %>
+	  	<%= link_to "#{e.datetime.strftime("%H:%M")} #{e.name}", event_path(e) %>
   	<% end %>
 	<% end %>
 <% end %>

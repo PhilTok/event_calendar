@@ -11,7 +11,7 @@
       <%= f.input :datetime, as: :string, input_html: { class: 'form-control datetimepicker' }%>
 
       <%= f.label :repeat, "Frequency" %>
-      <%= f.select(:repeat, ['Once','Day','Week','Month','Year'], {} , { class: 'form-control' }) %>
+      <%= f.select(:repeat, ['Once','Daily','Weekly','Monthly','Yearly'], {} , { class: 'form-control' }) %>
 
       <%= f.submit "Create my event", class: "btn btn-primary" %>
     <% end %>
