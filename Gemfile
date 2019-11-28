@@ -85,3 +85,5 @@ gem 'simple_calendar', '~> 2.3'
 gem 'momentjs-rails', '>= 2.9.0'
 
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
+gem 'telegram-bot-ruby'
