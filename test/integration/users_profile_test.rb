@@ -14,7 +14,6 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_match @user.events.count.to_s, response.body.to_s
     @user.events.each do |event|
     	assert_match event.name, response.body.to_s.encode("UTF-8")
-      assert_match event.content, response.body.to_s.encode("UTF-8")
       assert_match event.datetime.strftime("%d.%m.%Y"), response.body.to_s.encode("UTF-8")
       assert_match event.datetime.strftime("%H:%M"), response.body.to_s.encode("UTF-8")
     end
