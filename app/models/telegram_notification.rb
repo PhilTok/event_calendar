@@ -6,11 +6,11 @@ class TelegramNotification < ApplicationRecord
 		Faraday.new("https://api.telegram.org", :proxy => proxy_url)
 	end
 
-	def self.send_message message = "test", chat_id = 0
+	def self.send_message
 
-		chat_id = 201882280
+		chat_id = '201882280'
 
-		token = "807639358:AAHITQiTHrhlewYgZbfPiVs47t-g9VWQsv8"
+		token = '807639358:AAHITQiTHrhlewYgZbfPiVs47t-g9VWQsv8'
 		# token = '890049286:AAGGFOwiRYy_WyWRlv2BXE-RAK6AynWUHQ0'
 
 		
