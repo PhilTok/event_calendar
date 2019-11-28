@@ -25,7 +25,7 @@ class TelegramNotification < ApplicationRecord
 				# Telegram::Bot::Client.run(token, url: 'proxy') do |bot|
 				Telegram::Bot::Client.run(token) do |bot|
 					# bot.api.send_message(chat_id: chat_id, text: message, parse_mode: "markdown")
-					bot.api.send_message(chat_id: chat_id, text: message, parse_mode: "html")
+					bot.api.send_message(chat_id: 201882280, text: 'New event', parse_mode: "html")
 				end
 			# }
 		end
