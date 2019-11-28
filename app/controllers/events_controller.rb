@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def create
   	@event = Event.new(event_params)
-    message = "You created new event.<br>#{@event.name}<br>#{@event.content}<br>#{@event.datetime.strftime('%d.%m.%y %H:%M')}"
+    message = "You created new event.\n<b>#{@event.name}</b>\n<b>#{@event.content}</b>\n<b>#{@event.datetime.strftime('%d.%m.%y %H:%M')}</b>\n"
     TelegramNotification.send_message(current_user.chat_id, message)
     @event[:user_id] = current_user.id
     if @event.save
