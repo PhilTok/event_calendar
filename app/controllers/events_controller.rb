@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def create
   	@event = Event.new(event_params)
-    message = "You created new event.\n<b>#{@event.name}</b>\n<b>#{@event.content}</b>\n<b>#{@event.datetime.strftime('%d.%m.%y %H:%M')}</b>\n"
+    message = "You created new event.\n#{@event.name}\n#{@event.content}\n#{@event.datetime.strftime('%d.%m.%y %H:%M')}\n"
     TelegramNotification.send_message(current_user.chat_id, message)
     @event[:user_id] = current_user.id
     if @event.save
@@ -37,6 +37,8 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+    message = "You updated your event.\n#{@event.name}\n#{@event.content}\n#{@event.datetime.strftime('%d.%m.%y %H:%M')}\n"
+    TelegramNotification.send_message(current_user.chat_id, message)
     if @event.update_attributes(event_params)
       flash[:success] = "Event updated"
       redirect_to @event
