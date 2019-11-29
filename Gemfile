@@ -89,3 +89,5 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'telegram-bot-ruby'
 
 gem 'whenever', require: false
+
+gem "font-awesome-rails"

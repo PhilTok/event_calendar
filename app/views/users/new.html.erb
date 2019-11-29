@@ -18,8 +18,8 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.label :chat_id, "Chat it for notifications in the telegram" %>
-      <p class='note'>You can get notifiaction in the telegram, you need to get your chat id from @IDBot. Search @event_calendar_bot and start it.</p>
+      <%= f.label :chat_id, "Chat ID for notifications in the Telegram" %>
+      <p class='note'>If you want to receive notifications about your events in Telegram, get your Chat ID from @IDBot. Then search @event_calendar_bot and start it.</p>
       <%= f.text_field :chat_id, class: 'form-control' %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>

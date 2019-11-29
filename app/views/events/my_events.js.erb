@@ -1,0 +1,6 @@
+$('.col-md-9 *').remove();
+<% if params[:type] == 'user' %>
+	$('.col-md-9').append('<%= j render "events/calendar", user: current_user %>');
+<% else %>
+	$('.col-md-9').append('<%= j render "events/calendar", user: nil %>');
+<% end %>
