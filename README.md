@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Веб-приложение "Календарь Событий".
+Реализованы возможности регистрации и удаления пользователя, редактирование его личных данных; создания нового события, его редактирование и удаление; просмотр всех событий и событий данного пользователя. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+В приложение встроена возможность информирования в Telegram о предстоящем событии. Telegram сейчас является одним из самых популярных, безопасных и быстрых мессенджеров, поэтому функция информирования с помощью бота @event_calendar_bot будет максимально удобной для своевременного получения уведомлений.
