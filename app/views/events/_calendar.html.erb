@@ -3,7 +3,7 @@
 	<%= month_calendar do |date| %>
 		<%= date.day %>
 		<% Event.all.sort_by{|e| e.datetime.strftime('%H:%M')}.each do |e| %>
-		  <% if ((e.datetime.to_date == date) or (e.repeat == 'Daily') or (e.datetime.wday == date.wday and e.repeat == 'Weekly') or (e.datetime.day == date.day and e.repeat == 'Monthly') or (e.datetime.day == date.day and e.datetime.month == date.month and e.repeat == 'Yearly')) and date >= DateTime.now %>
+		  <% if ((e.datetime.to_date == date) or (e.repeat == 'Daily') or (e.datetime.wday == date.wday and e.repeat == 'Weekly') or (e.datetime.day == date.day and e.repeat == 'Monthly') or (e.datetime.day == date.day and e.datetime.month == date.month and e.repeat == 'Yearly')) and date >= DateTime.now.to_date %>
 		  	<%= link_to "#{e.datetime.strftime("%H:%M")} #{e.name}", event_path(e) %>
 	  	<% end %>
 		<% end %>
@@ -13,7 +13,7 @@
 	<%= month_calendar do |date| %>
 		<%= date.day %>
 		<% user.events.all.sort_by{|e| e.datetime.strftime('%H:%M')}.each do |e| %>
-		  <% if ((e.datetime.to_date == date) or (e.repeat == 'Daily') or (e.datetime.wday == date.wday and e.repeat == 'Weekly') or (e.datetime.day == date.day and e.repeat == 'Monthly') or (e.datetime.day == date.day and e.datetime.month == date.month and e.repeat == 'Yearly')) and date >= DateTime.now %>
+		  <% if ((e.datetime.to_date == date) or (e.repeat == 'Daily') or (e.datetime.wday == date.wday and e.repeat == 'Weekly') or (e.datetime.day == date.day and e.repeat == 'Monthly') or (e.datetime.day == date.day and e.datetime.month == date.month and e.repeat == 'Yearly')) and date >= DateTime.now.to_date %>
 		  	<%= link_to "#{e.datetime.strftime("%H:%M")} #{e.name}", event_path(e) %>
 	  	<% end %>
 		<% end %>
