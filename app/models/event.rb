@@ -8,7 +8,7 @@ class Event < ApplicationRecord
   def self.call_notifications
   	Event.all.each do |e|
   		if (e.datetime - DateTime.now.in_time_zone(e.datetime.zone)) <= 2.hours and (e.datetime - DateTime.now.in_time_zone(e.datetime.zone)) >= 1.minute
-        unless User.find(e.user_id).chat_id.nil? or current_user.chat_id == ''
+        unless User.find(e.user_id).chat_id.nil? or User.find(e.user_id).chat_id == ''
   		    message = "You're less than two hours away from your event.\n#{e.name}\n#{e.content}\n#{e.datetime.strftime('%H:%M')}\n"
   		    TelegramNotification.send_message(User.find(e.user_id).chat_id, message)
         end
