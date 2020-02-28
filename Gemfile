@@ -78,7 +78,7 @@ gem "will_paginate", "~> 3.1"
 
 gem "jquery-ui-rails", "~> 6.0"
 
-gem "simple_form", "~> 4.1"
+gem "simple_form", "~> 5.0"
 
 gem 'simple_calendar', '~> 2.3'
 
